@@ -1,0 +1,79 @@
+<html>
+    <title>Contact Form</title>
+    <head>
+<style>
+    body
+    {
+        font-family:Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color:rgb(248,244,244);
+        padding: 20px;
+    }
+    header
+    {
+        background-color:#007bff;
+        color:#fff;
+        padding: 10px 0;
+        text-align:center;
+        margin:0;
+    }
+    nav ul li
+    {
+        display: inline;
+        margin-right:20px;
+    }
+    nav a
+    {
+        color:#fff;
+        text-decoration: none;
+    }
+    a:hover
+    {
+        color:red;
+    }
+    
+</style>
+    </head>
+   
+    <body>
+        <header>
+        <h1 id="h01">My Favorite Vacations</h1>
+        <nav>
+            <ul>
+                <li><a href="#beach">Beach</a></li>
+                <li><a href="#mountain">Mountain</li>
+            </ul>
+        </nav>
+        </header>
+        <div class="topnav">
+            <a href="index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+        </div>
+        <form method="post">
+            <br>Name: <br>
+            <input type="text" id="name" size="50" required>
+            <br><br> Phone:  <br>
+            <input type="text" id="phone" size="50" required>
+            <br><br> Email: <br>
+            <input type="text" size="50" id="email">
+            <br><br>Password: <br>
+            <input type="text" size="50" id="password">
+            <br><br> Date: <br>
+            <input type="date" maxlength="4" size="50"  id="date">
+            
+
+    <br><br>
+    Preferred contact method:
+    <br>
+    <input type="checkbox" id="e01">Email
+    <input type="checkbox" id="p01">Phone
+            
+            <br><br><input type="submit" id="submit">
+        </form>
+
+        
+    </body>
+</html>
