@@ -32,7 +32,34 @@
     {
         color:red;
     }
-    
+    form{
+            display:flex;
+            flex-direction: column;
+            width:40%;
+            }
+ 
+                
+        input, textarea,select
+             {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+              }
+ 
+        button{
+            font-size: 18px;
+            background-color: yellow;
+            width: 200px;
+            height: 50px;
+            position: relative;
+           top: 50%;
+           left: 20%"
+           }
+        button:hover
+           {
+            background-color: blue;
+           }
+   
 </style>
     </head>
    
@@ -71,9 +98,60 @@
     <input type="checkbox" id="e01">Email
     <input type="checkbox" id="p01">Phone
             
-            <br><br><input type="submit" id="submit">
+            <br><br><button type="submit">Submit</button>
         </form>
 
         
     </body>
+    <script>
+        // Using document.getElementById to log a message everytime the "name" input value changes.
+       document.getElementById('name').addEventListener('input', function() {
+           console.log('Name input changed to: ' + this.value);
+       });
+    
+       // Using document.getElementsByTagName to interact with all input elements: change the background color of all input fields when they are focused and revert it back on blur means None.
+       let inputs = document.getElementsByTagName('input');
+       /*for (let i = 0; i < inputs.length; i++) {
+           inputs[i].addEventListener('focus', function() {
+               this.style.backgroundColor = 'yellow';
+           });
+           inputs[i].addEventListener('blur', function() {
+               this.style.backgroundColor = '';
+           });
+       }*/
+       
+       // for students in class practice: try to change the for loop into into a for of loop. answer below:
+       for (let input of inputs) {
+           input.addEventListener('focus', function() {
+               this.style.backgroundColor = 'yellow';
+           });
+           input.addEventListener('blur', function() {
+               this.style.backgroundColor = '';
+           });
+       }
+       
+       // for students to add a password validation:  the password is more than 8 characters and alerts the user if it isn't
+       document.getElementById('password').addEventListener('blur', function() {
+           var password = this.value; // 'this' refers to the password input element
+           if(password.length < 8){
+               alert('Password must be more than 8 characters.');
+           }
+       });
+    
+       // Using document.getElementsByClassName to interact with elements of the "radio-group" class
+       let radioButtons = document.getElementsByClassName('radio-group');
+       for (let radioButton of radioButtons) {
+           radioButton.addEventListener('change', function(e) {
+               alert('A new contact method was selected: ' + e.target.value);
+           });
+       }
+    
+       // Add an event listener to the "Submit" button to log a message when it is clicked
+       document.querySelector('button[type="submit"]').addEventListener('click', function(e) {
+           e.preventDefault();  // Prevent the form from submitting
+           alert('submit the form for processig now?');
+       });
+    
+       
+   </script> 
 </html>
